@@ -27,6 +27,13 @@ class CloudTravel {
       }
     } 
 
+    /*
+    This is the business logic
+    We maintain a array for the shortest distance from origin to each airport in this array.
+    We initialized the array with infinite distance to each airport from origin and from origin to origin distance as 0.
+    We checked where it can go from source and then in every iteration we calculated one minimum distance from the origin airport as described in logic
+    When iterations are finished we have the final distance
+    */
 
     while(distanceMatrix[destination]==Number.POSITIVE_INFINITY){
       let minDis = Number.POSITIVE_INFINITY,minval = Number.POSITIVE_INFINITY;
@@ -55,10 +62,11 @@ class CloudTravel {
 
   console.log(distanceMatrix);
 
+  //If no route exists we return -1
   if(distanceMatrix[destination]==Number.POSITIVE_INFINITY){
     return -1;
   }
-
+  //Else we return the distance
   else return distanceMatrix[destination];
 
 }
